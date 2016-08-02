@@ -1,1 +1,6 @@
-{}
+{
+    "message" : {
+        "success" : {"code":1},
+        "login_err" : {"code":0,"msg":"登录失败,请输入正确的用户名密码!"}
+    }
+}
