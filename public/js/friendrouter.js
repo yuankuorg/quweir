@@ -5,10 +5,28 @@ $(function(){
         leaveTimeout: 250
     });
     
-    router.push(sign).push(signDetails).push(signInfo)
-        .setDefault('/sign')
+	var friendPosition = {
+    	url : "/friendPosition",
+    	className : 'friendPosition',
+    	render : function() {
+    		var d = $.Deferred();
+    		$._ajax({
+    			url : "friendPosition.html",
+    			dataType : "text"
+    		}).done(function( html ){
+    			d.resolve(html);
+    		}).fail(function( err ) {
+                d.reject(err);
+            });
+            
+            return d.promise();
+    	}
+    }
+	
+    router.push(friendPosition)
+        .setDefault('/friendPosition')
         .init();
-
+	
 
     // .container 设置了 overflow 属性, 导致 Android 手机下输入框获取焦点时, 输入法挡住输入框的 bug
     // 相关 issue: https://github.com/weui/weui/issues/15
