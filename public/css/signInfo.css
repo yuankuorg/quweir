@@ -1,0 +1,110 @@
+.signInfo {
+	color: #666666;
+	font-size: 12px;
+}
+.hdinfo {
+	height: 167px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	
+	justify-content: center;
+	align-items: center;
+}
+.hdinfo .status {
+	width: 80px;
+	height: 80px;
+	border: 2px solid #fedf4d;
+	margin: auto auto 10px auto;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+}
+.hdinfo .status > img {
+	margin: 10px;
+}
+.hdinfo > div > span {
+	color: #99CC00;
+	font-weight: 800;
+}
+
+.weui_cells_title {
+	font-size: 12px;
+	height: 30px;
+	line-height: 30px;
+	background-color: #FFFFFF;
+	margin-bottom: 0px;
+}
+.weui_cells_title > .left {
+	float: left;
+	display: inline-block;
+}
+.weui_cells_title > .left > img {
+	vertical-align: sub;
+	margin-right: 5px;
+}
+.weui_cells_title > .right {
+	color: #CCCCCC;
+	display: inline-block;
+	float: right;
+}
+
+.weui_cell > span {
+	flex: 0 0 33.3%;
+	-webkit-flex: 0 0 33.3%;
+	-webkit-box: 0 0 33.3%;
+	
+	text-align: center;
+	font-size: 12px;
+}
+.weui_cell > span > p {
+	line-height: 30px;
+}
+.weui_cell > span > p:nth-child(1) {
+	font-size: 14px;
+	color: #999900;
+	font-weight: 800;
+}
+
+.friend img{
+	margin-right: 10px;
+}
+
+.product {
+	font-size: 13px;
+	color: #CCCCCC;
+}
+.product > div {
+	margin-bottom: 15px;
+}
+.product > div:nth-child(2) {
+	color: #999900;
+}
+.product > div:nth-child(3) {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+.product > div:nth-child(3) > span {
+	flex: 0 0 25%;
+	-webkit-flex: 0 0 25%;
+	-webkit-box: 0 0 25%;
+}
+.product > div:nth-child(3) > span {
+	text-align: center;
+}
+.product > div:nth-child(3) > span > img {
+	width: 60px;
+	height: 60px;
+}
+
+.mycard {
+	padding: 0px 15px;
+	margin: 20px 0px;
+}
+.mycard .mybutton {
+	border-radius: 0px;
+	background-color: #99cc00;
+	font-size: 14px;
+}

@@ -1,0 +1,72 @@
+.sign .hd .userhead {
+	text-align: center;
+}
+.sign .hd .userhead > img {
+	width: 80px;
+	margin: 20px 0px;
+}
+
+.sign .hd .userinfo {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+.sign .hd .userinfo > span {
+	flex: 0 0 33.3%;
+}
+.sign .hd .userinfo > span > p {
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+.sign .hd .userinfo > span > p:nth-child(1) {
+	color: #999900;
+}
+.sign .hd .userinfo > span > p:nth-child(2) {
+	color: #5E5E5E;
+	font-size: 12px;
+}
+.sign .hd .userinfo > span:nth-child(2) > P:nth-child(1) {
+	font-weight: 800;
+}
+
+.quweircells {
+	font-size: 14px;
+	margin-top: 0.5em;
+}
+
+.quweirtabs {
+	margin-top: 0.5em;
+}
+.quweirtabs .weui_navbar_item {
+	padding: 5px 0;
+	font-size: 14px;
+}
+.quweirtabs .weui_bar_item_on {
+	background-color: transparent;
+	border-bottom: 2px solid #9966ff;
+}
+.quweirtabs .weui_tab_bd {
+	padding-top : 30px;
+}
+.quweirtabs .weui_media_box .weui_media_title {
+	font-size: 14px;
+}
+.quweirtabs .weui_media_appmsg .weui_media_hd {
+	width: 40px;
+	height: 40px;
+}
+.weui_media_box.weui_media_appmsg .weui_media_appmsg_thumb {
+	vertical-align: top;
+}
+
+/**
+ * 弹窗样式设定
+ */
+.weui_dialog {
+	background-color: transparent;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 16px;
+}
