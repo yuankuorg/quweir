@@ -1,0 +1,44 @@
+/*聊天页面头部定位样式*/
+.fd_position{
+	background-color: #fff;
+}
+.fd_photo{
+	border-radius: 6px;
+}
+.fd_news>p{
+	color: #999;
+	font-size: 14px;
+	line-height: 18px;
+}
+.fd_news>p:nth-child(1){
+	color: #0066FF!important;
+    font-size: 12px!important;
+    line-height: 28px!important;
+}
+.fd_news>p:nth-child(1)::before{
+	content: "";
+	width: 16px;
+	height: 18px;
+	background: url(../img/friend/position.png) no-repeat center center;
+	display: inline-block;
+	vertical-align: middle;
+}
+/*回答问题样式*/
+.chat_btn{
+	font-size: 13px;
+	padding: 10px 15px;
+}
+.chat_btn>p{
+	text-align: center;
+	color: #000;
+}
+.chat_btn>a{
+	color: #333;
+	background-color: #fff;
+	border: 1px solid #ececec;
+	padding: 4px 20px!important;
+}
+.chat_btn>a:nth-child(3){
+	margin: 0 20px;
+}
+/*信息输入框样式*/

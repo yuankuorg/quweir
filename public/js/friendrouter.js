@@ -22,8 +22,25 @@ $(function(){
             return d.promise();
     	}
     }
+	var friendPorblem = {
+    	url : "/friendPorblem",
+    	className : 'friendPorblem',
+    	render : function() {
+    		var d = $.Deferred();
+    		$._ajax({
+    			url : "friendPorblem.html",
+    			dataType : "text"
+    		}).done(function( html ){
+    			d.resolve(html);
+    		}).fail(function( err ) {
+                d.reject(err);
+            });
+            
+            return d.promise();
+    	}
+    }
 	
-    router.push(friendPosition)
+    router.push(friendPosition).push(friendPorblem)
         .setDefault('/friendPosition')
         .init();
 	
