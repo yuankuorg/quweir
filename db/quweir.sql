@@ -19,4 +19,4 @@ create table admin
    primary key (aid)
 );
 
-insert into admin values(default,'quweir@qq.com','admin',1);
+insert into admin values(default,'quweir@qq.com','admin',0);

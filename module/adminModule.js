@@ -17,3 +17,21 @@ exports.adminlist = ( conn ) => {
         });
     });
 }
+
+exports.adminadd = ( conn, param ) => {
+    let sql = 'insert into admin values(default,?,?,1)';
+    return new promise(( resolve, reject ) => {
+        conn.query(sql, param, ( err )=>{
+           err ? reject( err ) : resolve(); 
+        });
+    });
+}
+
+exports.admindel = ( conn, param ) => {
+    let sql = 'delete from admin where aid = ?';
+    return new promise(( resolve, reject ) => {
+        conn.query(sql, param, ( err )=>{
+           err ? reject( err ) : resolve(); 
+        });
+    });
+}

@@ -1,5 +1,22 @@
 #修改日志
 
+#2016/8/3更新
+完成登录和管理员管理功能
+modified:   config/config.json
+modified:   db/quweir.pdm
+modified:   db/quweir.sql
+modified:   module/adminModule.js
+modified:   public/js/adminrouter.js
+modified:   router/adminRouter.js
+modified:   service/adminService.js
+modified:   views/admin/adminindex.html
+modified:   views/admin/adminlist.html
+db/quweir.pdb
+public/404.html
+public/500.html
+views/admin/adminadd.html
+
+
 #2016/8/2更新
 搭建后台，并实现简单的登录与管理员显示功能
 modified:   .gitignore

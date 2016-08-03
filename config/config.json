@@ -1,6 +1,8 @@
 {
     "message" : {
         "success" : {"code":1},
-        "login_err" : {"code":0,"msg":"登录失败,请输入正确的用户名密码!"}
+        "login_err" : {"code":0,"msg":"登录失败,请输入正确的用户名密码!"},
+        "adminadd_err" : {"code":0,"msg":"增加管理员失败,请稍后重试!"},
+        "admindel_err" : {"code":0,"msg":"删除管理员失败,请稍后重试!"}
     }
 }

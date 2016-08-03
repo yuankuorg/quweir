@@ -13,7 +13,7 @@
         <tr>
             <td>
                 <% if(admin.issuper) { %>
-                    <input type="checkbox" name="ids" value="<%=admin.id %>"/>
+                    <input type="checkbox" name="ids" value="<%=admin.aid %>"/>
                 <% } %>
             </td>
             <td><%=admin.email %></td>
@@ -21,8 +21,7 @@
             <td><%=admin.issuper ? '否' : '是' %></td>
             <td>
                 <% if(admin.issuper) { %>
-                    <a href="#/delAdmin/<%=admin.id%>" class="glyphicon glyphicon-trash"></a>
-                    <a href="#/goAddAdmin/<%=admin.id%>" class="glyphicon glyphicon-edit"></a>
+                    <a href="#/deladmin/<%=admin.aid%>" class="glyphicon glyphicon-trash"></a>
                 <% } %>
             </td>
         </tr>
@@ -31,6 +30,5 @@
 </table>
 
 <div class="btn-group">
-    <a href="javascript:;" id="delAll" type="button" class="btn btn-success"><i class="glyphicon glyphicon-trash"></i></a>
-    <a href="#/goAddAdmin/-1" type="button" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i></a>
+    <a href="#/goadminadd" type="button" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i></a>
 </div>

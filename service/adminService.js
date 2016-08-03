@@ -1,6 +1,7 @@
 'use strict';
 
 var adminModule = require(`${rootPath}/module/adminModule.js`);
+
 exports.login = ( req, res, next ) => {
     var conn;
     co(function* () {
@@ -40,5 +41,39 @@ exports.adminlist = ( req, res, next ) => {
     }).catch(( err )=>{
         conn.release();
         next(err);
+    });
+}
+
+exports.goadminadd = ( req, res, next ) => {
+    res.render('admin/adminadd.html');
+}
+
+exports.adminadd = ( req, res, next ) => {
+    var conn;
+    co(function* (){
+        conn = yield pool.getConnectionAsync();
+        let rows = yield adminModule.adminadd(conn,[req.body.email,req.body.pwd]);
+        conn.release();
+
+        res.send(config.message.success).end();
+    }).catch(( err )=>{
+        conn.release();
+        console.log(err.stack);
+        res.send(config.message.adminadd_err).end();
+    });
+}
+
+exports.admindel = ( req, res,next ) => {
+    var conn;
+    co(function* (){
+        conn = yield pool.getConnectionAsync();
+        let rows = yield adminModule.admindel(conn,[req.body.id]);
+        conn.release();
+
+        res.send(config.message.success).end();
+    }).catch(( err ) => {
+        conn.release();
+        console.log(err.stack);
+        res.send(config.message.adminadd_err).end();
     });
 }
