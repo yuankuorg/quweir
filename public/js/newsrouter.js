@@ -25,6 +25,11 @@ $(function(){
     		$(".news_tab_box .weui_tabbar_item").click(function(){
     			$(this).addClass("cur").siblings(".weui_tabbar_item").removeClass("cur");
     			var id = $(this).data("id");
+    			if( id == "myzone" ){
+    				$(".container").css("background-color","#f1eeec");
+    			}else{
+    				$(".container").css("background-color","#fff");
+    			}
     			$("#" + $(this).data("id")).show("fast").siblings(".weui_panel_bd").hide();
     		});
     	}
