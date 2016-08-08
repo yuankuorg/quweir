@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/weui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" href="css/newsCommon.css" />
+		<script src="js/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.touchSwipe.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/router.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/util.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.container,.chat_top{
+				background-color: #f1eeec;
+			}
+			.news_box h5,.near_box h5,.myzone_head h5{ 
+				font-size: 15px!important;
+				color: #333;
+			}
+			.myzone_head h5{
+				color: #000;
+			}
+			.myzone_head .myqone_news p:nth-child(2){
+				color: #333;
+				font-size: 12px;
+			}
+			.myzone_head .myqone_news p:nth-child(3) span{
+				color: #fff;
+				font-size: 12px;
+				background-color: #ccc;
+				padding: 2px 10px;
+				margin-right: 5px;
+			}
+			.myzone_head .myqone_news p:nth-child(3) span:nth-child(2),.myzone_head .myqone_news p:nth-child(3) span:nth-child(3){
+				background-color: #fbabed!important;
+			}
+			.myzone_head .myqone_news p:nth-child(3) span:nth-child(2)::before,.myzone_head .myqone_news p:nth-child(3) span:nth-child(3)::before{
+				content: '';
+				width: 10px;
+				height: 13px;
+				background: url(../img/news/weichat_rz.png) no-repeat center center;
+				display: inline-block;
+				vertical-align: middle;	
+				margin-right: 5px;
+			}
+			.o_box{
+				font-size: 13px;
+			}
+			.o_juli{
+				color: #0066FF;
+			}
+			.o_juli::before{
+				content: "";
+				width: 16px;
+				height: 18px;
+				background: url(img/friend/position.png) no-repeat center center;
+				display: inline-block;
+				vertical-align: middle;
+			}
+			..weui_cells_access:nth-child(1)>.weui_cell>.weui_cell_ft:after{
+				display: none!important;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container" id="container">
+			<div class="weui_panel_bd myzone_box">
+				<div class="weui_panel_bd myzone_head">
+					<a class="weui_media_box weui_media_appmsg">
+						<div class="weui_media_hd">
+							<img src="img/friend/photo.png" />
+						</div>
+						<div class="weui_media_bd myqone_news">
+							<h5 class="weui_media_title">紫色的夜晚</h5>
+							<p>24岁 广州</p>
+							<p><span>VIP</span><span>微信认证</span><span>手机认证</span></p>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div></div>
+			<div class="weui_cells o_box">
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>个人空间</p>
+					</div>
+					<div class="weui_cell_ft o_juli">Ta现在跟你的距离是 300米内</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>交友目的</p>
+					</div>
+					<div class="weui_cell_ft">寂寞想找个人聊天</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>婚姻状况</p>
+					</div>
+					<div class="weui_cell_ft">未婚</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>魅力部位</p>
+					</div>
+					<div class="weui_cell_ft">嘴唇</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>恋爱观念</p>
+					</div>
+					<div class="weui_cell_ft">有性有爱</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>感情状况</p>
+					</div>
+					<div class="weui_cell_ft">寂寞</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>首次见面希望</p>
+					</div>
+					<div class="weui_cell_ft">都可以拉</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>希望约会地址</p>
+					</div>
+					<div class="weui_cell_ft">都可以啦</div>
+				</div>
+			</div>
+			<div class="weui_cells o_box">
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>个人资料</p>
+					</div>
+					<div class="weui_cell_ft o_juli">Ta现在跟你的距离是 300米内</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>昵称</p>
+					</div>
+					<div class="weui_cell_ft">小猪</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>性别</p>
+					</div>
+					<div class="weui_cell_ft">女</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>年龄</p>
+					</div>
+					<div class="weui_cell_ft">21岁</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>身高</p>
+					</div>
+					<div class="weui_cell_ft">158cm</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>体重</p>
+					</div>
+					<div class="weui_cell_ft">47kg</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>星座</p>
+					</div>
+					<div class="weui_cell_ft">射手座</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>属相</p>
+					</div>
+					<div class="weui_cell_ft">猪</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>学历</p>
+					</div>
+					<div class="weui_cell_ft">高中</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>职业</p>
+					</div>
+					<div class="weui_cell_ft">服务员</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>月收入</p>
+					</div>
+					<div class="weui_cell_ft">5000~10000</div>
+				</div>
+			</div>
+			<div class="weui_cells weui_cells_access o_box">
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>联系方式</p>
+					</div>
+					<div class="weui_cell_ft o_juli">Ta现在跟你的距离是 300米内</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>QQ</p>
+					</div>
+					<div class="weui_cell_ft">仅VIP可见 </div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>微信</p>
+					</div>
+					<div class="weui_cell_ft">仅VIP可见</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>手机</p>
+					</div>
+					<div class="weui_cell_ft">仅VIP可见</div>
+				</div>
+			</div>
+			<div class="weui_cells o_box">
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>征友条件</p>
+					</div>
+					<div class="weui_cell_ft o_juli">Ta现在跟你的距离是 300米内</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>年龄</p>
+					</div>
+					<div class="weui_cell_ft">23~28岁</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>身高</p>
+					</div>
+					<div class="weui_cell_ft">160cm~180cm</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>学历</p>
+					</div>
+					<div class="weui_cell_ft">无限制</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>月收入</p>
+					</div>
+					<div class="weui_cell_ft">5000~10000</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

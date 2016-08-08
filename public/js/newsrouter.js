@@ -21,7 +21,7 @@ $(function(){
             return d.promise();
     	},
     	bind : function() {
-    		//男生/女生切换
+    		$(".container").css("background-color","#fff");
     		$(".news_tab_box .weui_tabbar_item").click(function(){
     			$(this).addClass("cur").siblings(".weui_tabbar_item").removeClass("cur");
     			var id = $(this).data("id");
@@ -34,7 +34,127 @@ $(function(){
     		});
     	}
     }
-    router.push(newsMy)
+    var vipmonth = {
+    	url : "/vipmonth",
+    	className : 'vipmonth',
+    	render : function() {
+    		var d = $.Deferred();
+    		$._ajax({
+    			url : "vipmonth.html",
+    			dataType : "text"
+    		}).done(function( html ){
+    			d.resolve(html);
+    		}).fail(function( err ) {
+                d.reject(err);
+            });
+            
+            return d.promise();
+    	},
+    	bind : function(){
+    		$(".container").css("background-color","#f1eeec");
+    	}
+    }
+    var xiangce = {
+    	url : "/xiangce",
+    	className : 'xiangce',
+    	render : function() {
+    		var d = $.Deferred();
+    		$._ajax({
+    			url : "xiangce.html",
+    			dataType : "text"
+    		}).done(function( html ){
+    			d.resolve(html);
+    		}).fail(function( err ) {
+                d.reject(err);
+            });
+            
+            return d.promise();
+    	},
+    	bind : function(){
+    		$(".container").css("background-color","#f1eeec");
+    	}
+    }
+    var ziliao = {
+    	url : "/ziliao",
+    	className : 'ziliao',
+    	render : function() {
+    		var d = $.Deferred();
+    		$._ajax({
+    			url : "ziliao.html",
+    			dataType : "text"
+    		}).done(function( html ){
+    			d.resolve(html);
+    		}).fail(function( err ) {
+                d.reject(err);
+            });
+            
+            return d.promise();
+    	},
+    	bind : function(){
+    		$(".container").css("background-color","#f1eeec");
+    	}
+    }
+    var information = {
+    	url : "/information",
+    	className : 'information',
+    	render : function() {
+    		var d = $.Deferred();
+    		$._ajax({
+    			url : "information.html",
+    			dataType : "text"
+    		}).done(function( html ){
+    			d.resolve(html);
+    		}).fail(function( err ) {
+                d.reject(err);
+            });
+            
+            return d.promise();
+    	},
+    	bind : function(){
+    		$(".container").css("background-color","#f1eeec");
+    	}
+    }
+    var conditions = {
+    	url : "/conditions",
+    	className : 'conditions',
+    	render : function() {
+    		var d = $.Deferred();
+    		$._ajax({
+    			url : "conditions.html",
+    			dataType : "text"
+    		}).done(function( html ){
+    			d.resolve(html);
+    		}).fail(function( err ) {
+                d.reject(err);
+            });
+            
+            return d.promise();
+    	},
+    	bind : function(){
+    		$(".container").css("background-color","#f1eeec");
+    	}
+    }
+    var near = {
+    	url : "/near",
+    	className : 'near',
+    	render : function() {
+    		var d = $.Deferred();
+    		$._ajax({
+    			url : "near.html",
+    			dataType : "text"
+    		}).done(function( html ){
+    			d.resolve(html);
+    		}).fail(function( err ) {
+                d.reject(err);
+            });
+            
+            return d.promise();
+    	},
+    	bind : function(){
+    		$(".container").css("background-color","#fff");
+    	}
+    }
+    router.push(newsMy).push(vipmonth).push(xiangce).push(ziliao).push(information).push(conditions).push(near)
         .setDefault('/newsMy')
         .init();
 	
