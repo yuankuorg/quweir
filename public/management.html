@@ -1,0 +1,535 @@
+<!doctype html>
+<html class="manager_page">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="Cache-Control" content="no-siteapp">
+		<meta name="ROBOTS" content="NOARCHIVE" />
+		<title>趣味儿情趣商城运营管理后台</title>
+		<link rel="stylesheet" type="text/css" href="css/weui.min.css"/>
+		<link type="text/css" rel="stylesheet" href="css/reset.css" />
+		<link type="text/css" rel="stylesheet" href="css/common.css" />
+		<script src="js/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.touchSwipe.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/router.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/util.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.header{
+				height:70px;
+				width:100%;
+				position:relative;
+				background-color:#8166FF;
+			}
+			.header h5{
+				padding-left:10px;
+				font-size:18px;
+				line-height:70px;
+				color:#fff;
+			}
+			.menu,.menu_left{
+				position:absolute;
+				width:200px;
+				height:auto;
+				top:70px;
+				left:0;
+				bottom:0;
+				background-color: #E7E7E7;
+				overflow:hidden;
+			}
+			.menu_left{
+				width: 20px;
+				background-color: #72c1f8;
+				top: 0;
+			}
+			.menu>ul{
+				position: absolute;
+				left: 40px;
+			}
+			.menu>ul>li{
+				font-size: 14px;
+				position: relative;
+				line-height: 30px;
+				cursor: pointer;
+			}
+			.menu>ul>li>p>span{
+			    display: inline-block;
+			    -webkit-transform: rotate(45deg);
+			    transform: rotate(45deg);
+			    height: 6px;
+			    width: 6px;
+			    border-width: 2px 2px 0 0;
+			    border-color: #000;
+			    border-style: solid;
+			    position: relative;
+			    top: -2px;
+			    position: absolute;
+			    left: -15px;
+			    top: 15px;
+			    margin-top: -4px;
+			}
+			.xiala{
+				margin-left: 28px;
+				display: none;
+			}
+			.xiala li a{
+				display: block;
+				line-height: 20px;
+			}
+			.xl_cur{
+				font-weight: bold;
+			}
+			.content_box{
+				width: 100%;
+				position: absolute;
+				top: 70px;
+				left: 220px;
+				flex: 1;
+				background-color: #fff;
+			}
+			.content_box>div>p{
+				font-size: 14px;
+				color: #0097FF;
+				line-height: 40px;
+			}
+			table{
+				width: 50%;
+				border: 1px solid #000;
+			}
+			table tr{
+				border-bottom: 1px solid #000;
+				line-height: 30px;
+			}
+			table tr:last-child{
+				border-bottom: none;
+			}
+			table tr:first-child{
+				background-color: #ccc;
+			}
+			table tr td{
+				text-align: center;
+				border-right:1px solid #000;
+				vertical-align: middle;
+			}
+			table tr td:last-child{
+				border-right: none;
+			}
+			.userinfo table tr td:first-child,.userinfo table tr td:last-child,.card_type table tr td:last-child{
+				text-decoration: underline;
+				color: #0055ff;
+				cursor: pointer;
+			}
+			.userinfo table tr:first-child td:first-child,.userinfo table tr:first-child td:last-child,.card_type table tr:first-child td:last-child{
+				text-decoration: none;
+				color: #000!important;
+			}
+			.picture_audit table tr td span{
+				width: 15px;
+				height: 15px;
+				border: 1px solid #000;
+				display: inline-block;
+				vertical-align: middle;
+			}
+			.picture_audit table tr td div,.card_type table tr td div{
+				width: 50%;
+				margin: 10px auto;
+    			vertical-align: middle;
+			}
+			.card_type table tr td div{
+				margin: 5px auto;
+			}
+			.picture_audit table tr td div img{
+    			vertical-align: middle;
+			}
+			.picture_audit table tr td:last-child{
+				color: #0055ff;
+				cursor: pointer;
+			}
+			.picture_audit table tr:first-child td:last-child{
+				color: #000;
+			}
+			.set_box{
+				width: 50%;
+				padding: 5px 10px 10px;
+				background-color: #ccc;
+				font-size: 14px;
+				margin-left: 10px;
+			}
+			.set_box>div>p{
+				width: 100px;
+				display: inline-block;
+			}
+			.set_box>div{
+				line-height: 40px;
+			}
+			.set_box>div:first-child{
+				line-height: 30px!important;
+			}
+			.set_box>div:last-child{
+				line-height: 20px!important;
+				margin-top: 20px;
+			}
+			.set_box>div>input{
+				width: 80%;
+				border: 1px solid #000;
+				padding: 5px 0 5px 5px;
+			}
+			.set_box button{
+				padding: 3px 10px;
+				outline: none;
+				border: 1px solid #000;
+				font-size: 14px;
+				margin-top: 20px;
+			}
+			.set_box>div:last-child span{
+				width: 40px;
+				padding: 20px 0;
+				display: inline-block;
+				background-color: #34AC93;
+				color: #fff;
+				text-align: center;
+				vertical-align: middle;
+			}
+			.set_box>div:last-child div{
+				width: 80%;
+				display: inline-block;
+				vertical-align: middle;
+			}
+		</style>
+	</head>
+	<body class="manager_page">
+		<header class="header">
+		    <h5>趣味儿情趣商城运营管理后台 v1.0</h5>
+		</header>
+		<nav class="menu">
+			<div class="menu_left"></div>
+			<ul>
+				<li>
+					<p><span style="transform: rotate(135deg);"></span>用户管理</p>
+					<ul class="xiala" style="display: block;">
+						<li>
+							<a class="xl_cur">用户信息</a>
+							<a>图片审核</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<p><span></span>运营数据</p>
+					<ul class="xiala">
+						<li>
+							<a>用户数据</a>
+							<a>销售数据</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<p><span></span>打卡设置</p>
+					<ul class="xiala">
+						<li>
+							<a>卡的种类</a>
+							<a>参数设置</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<div class="content_box">
+			<div class="userinfo">
+				<p>用户管理-用户信息列表</p>
+				<table>
+					<tr>
+						<td>手机号</td>
+						<td>昵称</td>
+						<td>平台</td>
+						<td>累计趣豆</td>
+						<td>总兑换次数</td>
+						<td>总消费金额</td>
+						<td>注册时间</td>
+						<td>操作</td>
+					</tr>
+					<tr>
+						<td>13800138000</td>
+						<td>哈喽我来咯</td>
+						<td>Android</td>
+						<td>35</td>
+						<td>35</td>
+						<td>123</td>
+						<td>2016-01-01 00:00:00</td>
+						<td>拉黑</td>
+					</tr>
+					<tr>
+						<td>13800138000</td>
+						<td>哈喽我来咯</td>
+						<td>Android</td>
+						<td>35</td>
+						<td>35</td>
+						<td>123</td>
+						<td>2016-01-01 00:00:00</td>
+						<td>拉黑</td>
+					</tr>
+					<tr>
+						<td>13800138000</td>
+						<td>哈喽我来咯</td>
+						<td>Android</td>
+						<td>35</td>
+						<td>35</td>
+						<td>123</td>
+						<td>2016-01-01 00:00:00</td>
+						<td>拉黑</td>
+					</tr>
+					<tr>
+						<td>13800138000</td>
+						<td>哈喽我来咯</td>
+						<td>Android</td>
+						<td>35</td>
+						<td>35</td>
+						<td>123</td>
+						<td>2016-01-01 00:00:00</td>
+						<td>拉黑</td>
+					</tr>
+					<tr>
+						<td>13800138000</td>
+						<td>哈喽我来咯</td>
+						<td>Android</td>
+						<td>35</td>
+						<td>35</td>
+						<td>123</td>
+						<td>2016-01-01 00:00:00</td>
+						<td>拉黑</td>
+					</tr>
+				</table>
+			</div>
+			<div class="picture_audit" style="display: none;">
+				<p>用户管理-图片审核</p>
+				<table>
+					<tr>
+						<td>选择</td>
+						<td>手机</td>
+						<td>昵称</td>
+						<td>图片</td>
+						<td>操作</td>
+					</tr>
+					<tr>
+						<td><span></span></td>
+						<td>13800138000</td>
+						<td>哈喽我来咯</td>
+						<td>
+							<div><img src="img/friend/photo.png" /></div>
+						</td>
+						<td>屏蔽 - 通过</td>
+					</tr>
+					<tr>
+						<td><span></span></td>
+						<td>13800138000</td>
+						<td>哈喽我来咯</td>
+						<td>
+							<div><img src="img/friend/photo.png" /></div>
+						</td>
+						<td>屏蔽 - 通过</td>
+					</tr>
+					<tr>
+						<td><span></span></td>
+						<td>13800138000</td>
+						<td>哈喽我来咯</td>
+						<td>
+							<div><img src="img/friend/photo.png" /></div>
+						</td>
+						<td>屏蔽 - 通过</td>
+					</tr>
+					<tr>
+						<td><span></span></td>
+						<td>13800138000</td>
+						<td>哈喽我来咯</td>
+						<td>
+							<div><img src="img/friend/photo.png" /></div>
+						</td>
+						<td>屏蔽 - 通过</td>
+					</tr>
+					<tr>
+						<td><span></span></td>
+						<td>13800138000</td>
+						<td>哈喽我来咯</td>
+						<td>
+							<div><img src="img/friend/photo.png" /></div>
+						</td>
+						<td>屏蔽 - 通过</td>
+					</tr>
+				</table>
+			</div>
+			<div class="user_data" style="display: none;">
+				<p>运营数据-用户数据</p>
+				<table>
+					<tr>
+						<td>日期</td>
+						<td>用户数</td>
+						<td>活跃数</td>
+						<td>次日留存率</td>
+						<td>7日留存率</td>
+						<td>付费用户数</td>
+						<td>充值金额</td>
+						<td>累计用户数</td>
+						<td>累计付费用户数</td>
+						<td>累计充值金额</td>
+					</tr>
+					<tr>
+						<td>2016-01-01</td>
+						<td>123456</td>
+						<td>123456</td>
+						<td>45.55%</td>
+						<td>21.55%</td>
+						<td>123456</td>
+						<td>12345678.00</td>
+						<td>123456789</td>
+						<td>123456</td>
+						<td>123456789.00</td>
+					</tr>
+					<tr>
+						<td>2016-01-01</td>
+						<td>123456</td>
+						<td>123456</td>
+						<td>45.55%</td>
+						<td>21.55%</td>
+						<td>123456</td>
+						<td>12345678.00</td>
+						<td>123456789</td>
+						<td>123456</td>
+						<td>123456789.00</td>
+					</tr>
+					<tr>
+						<td>2016-01-01</td>
+						<td>123456</td>
+						<td>123456</td>
+						<td>45.55%</td>
+						<td>21.55%</td>
+						<td>123456</td>
+						<td>12345678.00</td>
+						<td>123456789</td>
+						<td>123456</td>
+						<td>123456789.00</td>
+					</tr>
+				</table>
+			</div>
+			<div class="sales_data" style="display: none;">
+				<p>运营数据-销售数据</p>
+				<table>
+					<tr>
+						<td>日期</td>
+						<td>订单量</td>
+						<td>购买人数</td>
+						<td>产生的趣豆</td>
+						<td>兑换的趣豆</td>
+						<td>充值消费金额</td>
+					</tr>
+					<tr>
+						<td>2016-01-01</td>
+						<td>123456</td>
+						<td>123456</td>
+						<td>123456</td>
+						<td>123456</td>
+						<td>123456</td>
+					</tr>
+					<tr>
+						<td>2016-01-01</td>
+						<td>123456</td>
+						<td>123456</td>
+						<td>123456</td>
+						<td>123456</td>
+						<td>123456</td>
+					</tr>
+					<tr>
+						<td>2016-01-01</td>
+						<td>123456</td>
+						<td>123456</td>
+						<td>123456</td>
+						<td>123456</td>
+						<td>123456</td>
+					</tr>
+				</table>
+			</div>
+			<div class="card_type" style="display: none;">
+				<p>打卡设置-卡的种类</p>
+				<table>
+					<tr>
+						<td>卡的名称</td>
+						<td>卡的图标</td>
+						<td>类型描述</td>
+						<td>针对人群</td>
+						<td>时间限定</td>
+						<td>每天次数</td>
+						<td>每次间隔</td>
+						<td>操作</td>
+					</tr>
+					<tr>
+						<td>戒撸打卡</td>
+						<td>
+							<div><img src="img/sign/1.png" /></div>
+						</td>
+						<td>酒再好也别贪杯，注意身体</td>
+						<td>男生</td>
+						<td>全天</td>
+						<td>1</td>
+						<td>/</td>
+						<td>编辑</td>
+					</tr>
+					<tr>
+						<td>戒撸打卡</td>
+						<td>
+							<div><img src="img/sign/1.png" /></div>
+						</td>
+						<td>酒再好也别贪杯，注意身体</td>
+						<td>男生</td>
+						<td>全天</td>
+						<td>1</td>
+						<td>/</td>
+						<td>编辑</td>
+					</tr>
+					<tr>
+						<td>戒撸打卡</td>
+						<td>
+							<div><img src="img/sign/1.png" /></div>
+						</td>
+						<td>酒再好也别贪杯，注意身体</td>
+						<td>男生</td>
+						<td>全天</td>
+						<td>1</td>
+						<td>/</td>
+						<td>编辑</td>
+					</tr>
+				</table>
+			</div>
+			<div class="preference" style="display: none;">
+				<p>打卡设置-参数设置</p>
+				<div class="set_box">
+					<div><p>增加趣豆</p></div>
+					<div><p>每天打卡增加:</p><input placeholder="每天第一次打卡的趣豆是多少" /></div>
+					<div><p>一级好友增加:</p><input placeholder="每成功邀请一个1级好友增加的趣豆是多少" /></div>
+					<div><p>二级好友增加:</p><input placeholder="每成功邀请一个2级好友增加的趣豆是多少" /></div>
+					<button>确定设置</button>
+					<div>
+						<span>名词解释</span>
+						<div>
+							<p>每天打卡增加：每天首次打卡增加趣豆是多少，如果不是首次则不会增加</p>
+							<p>一级好友增加：每成功邀请1位1级好友进来公众号，趣豆给用户增加多少</p>
+							<p>二级好友增加：每成功邀请1位2级好友关注公众号，趣豆给用户增加多少</p>
+						</div>						
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(".menu>ul>li>p").click(function(){
+				var $this = $(this);
+				var $xiala = $this.siblings(".xiala");
+				var $span = $this.children("span");
+				
+				if($xiala.css("display") === "none"){
+					$span.css("transform","rotate(135deg)");
+					$xiala.show();
+				}else{
+					$span.css("transform","rotate(45deg)");
+					$xiala.hide();
+				}
+			})
+		</script>
+	</body>
+</html>
