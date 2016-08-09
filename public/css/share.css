@@ -1,0 +1,25 @@
+.chat_top{
+	border-bottom: 1px solid #ccc;
+}
+.chat_img{
+	width: 50%;
+	margin: 0 auto;
+	padding: 30px 0 10px;
+	text-align: center;
+}
+.container p{
+	text-align: center;
+	font-size: 16px;
+}
+.container>.chat_top>p:nth-child(3){
+	font-size: 14px!important;
+	color: #999;
+	line-height: 40px;
+}
+.container>p{
+	margin-top: 30px;
+}
+.join_in{
+	width: 60%;
+	margin: 20px auto 0;
+}

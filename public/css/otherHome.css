@@ -1,0 +1,81 @@
+.container,.chat_top{
+	background-color: #f1eeec;
+}
+.myzone_box{
+	background-color: #fff;
+}
+.news_box h5,.near_box h5,.myzone_head h5{ 
+	font-size: 15px!important;
+	color: #333;
+}
+.myzone_head h5{
+	color: #000;
+}
+.myzone_head .myqone_news p:nth-child(2){
+	color: #333;
+	font-size: 12px;
+}
+.myzone_head .myqone_news p:nth-child(3) span{
+	color: #fff;
+	font-size: 12px;
+	background-color: #ccc;
+	padding: 2px 10px;
+	margin-right: 5px;
+}
+.myzone_head .myqone_news p:nth-child(3) span:nth-child(2),.myzone_head .myqone_news p:nth-child(3) span:nth-child(3){
+	background-color: #fbabed!important;
+}
+.myzone_head .myqone_news p:nth-child(3) span:nth-child(2)::before,.myzone_head .myqone_news p:nth-child(3) span:nth-child(3)::before{
+	content: '';
+	width: 10px;
+	height: 13px;
+	background: url(../img/news/weichat_rz.png) no-repeat center center;
+	display: inline-block;
+	vertical-align: middle;	
+	margin-right: 5px;
+}
+.o_box{
+	font-size: 13px;
+}
+.o_juli{
+	color: #0066FF;
+}
+.o_juli::before{
+	content: "";
+	width: 16px;
+	height: 18px;
+	background: url(../img/friend/position.png) no-repeat center center;
+	display: inline-block;
+	vertical-align: middle;
+}
+.o_box>.weui_cell:nth-child(1)>.weui_cell_bd{
+	color: #999!important;
+}
+.weui_cells_access>.weui_cell:nth-child(1)>.weui_cell_ft:after{
+	display: none!important;
+}
+.want_chat,.next_chat{
+	width: 80px;
+	height: 65px;
+	text-align: center;
+	border-radius: 50%;
+	background-color: #fbabed;
+	position: fixed;
+	bottom: 20px;
+}
+.want_chat{
+	left: 10px;
+}
+.next_chat{
+	right: 10px;
+}
+.want_chat::before,.next_chat::before{
+	content: '';
+	width: 20px;
+	height: 20px;
+	margin: 0 auto;
+	background: url(../img/news/chat.png) no-repeat center center;
+	text-align: center;
+	display: block;
+	margin-top: 5px;
+}
