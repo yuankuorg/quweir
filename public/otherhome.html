@@ -40,7 +40,7 @@
 				content: '';
 				width: 10px;
 				height: 13px;
-				background: url(../img/news/weichat_rz.png) no-repeat center center;
+				background: url(img/news/weichat_rz.png) no-repeat center center;
 				display: inline-block;
 				vertical-align: middle;	
 				margin-right: 5px;
@@ -59,8 +59,36 @@
 				display: inline-block;
 				vertical-align: middle;
 			}
-			..weui_cells_access:nth-child(1)>.weui_cell>.weui_cell_ft:after{
+			.o_box>.weui_cell:nth-child(1)>.weui_cell_bd{
+				color: #999!important;
+			}
+			.weui_cells_access>.weui_cell:nth-child(1)>.weui_cell_ft:after{
 				display: none!important;
+			}
+			.want_chat,.next_chat{
+				width: 80px;
+				height: 65px;
+				text-align: center;
+				border-radius: 50%;
+				background-color: #fbabed;
+				position: fixed;
+				bottom: 20px;
+			}
+			.want_chat{
+				left: 10px;
+			}
+			.next_chat{
+				right: 10px;
+			}
+			.want_chat::before,.next_chat::before{
+				content: '';
+				width: 20px;
+				height: 20px;
+				margin: 0 auto;
+				background: url(img/news/chat.png) no-repeat center center;
+				text-align: center;
+				display: block;
+				margin-top: 5px;
 			}
 		</style>
 	</head>
@@ -257,6 +285,8 @@
 					<div class="weui_cell_ft">5000~10000</div>
 				</div>
 			</div>
+			<div class="want_chat">打招呼</div>
+			<div class="next_chat">下一个</div>
 		</div>
 	</body>
 </html>
